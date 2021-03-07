@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { createMuiTheme , ThemeProvider} from '@material-ui/core/styles';
-
-
-
 import ReactEcharts from 'echarts-for-react';
 import { Route, BrowserRouter, Switch } from "react-router-dom";
 import Layout from './layout/Layout';
@@ -13,6 +10,7 @@ import Insights from './pages/Insights';
 import Solution from './pages/Solution';
 import Industries from './pages/Industries';
 import './index.css';
+import Spreadsheet from "react-spreadsheet";
 
 import green from '@material-ui/core/colors/green';
 
@@ -29,10 +27,14 @@ const theme = createMuiTheme({
     },
   });
 
+  const data = [
+    [{ value: "Vanilla" }, { value: "Chocolate" }],
+    [{ value: "Strawberry" }, { value: "Cookies" }],
+  ];
 
 class App extends Component {
     render() {
-      return (<ReactEcharts
+      return (<><ReactEcharts
         option={
             {
                 title: {
@@ -104,8 +106,9 @@ class App extends Component {
         }
         
         />
+        <Spreadsheet data={data} />
 
-      );}}
+</>);}}
 
 function Index(props) {
     return (

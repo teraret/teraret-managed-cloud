@@ -1,3 +1,9 @@
+grails {
+	mongodb {
+		url = "mongodb+srv://harish:wEM1ORSZlSXT9kin@cluster0.3bwrf.mongodb.net/teraret?retryWrites=true&w=majority"
+	}
+}
+
 grails.plugin.springsecurity.filterChain.chainMap = [
         //Stateless chain
         [
@@ -40,3 +46,5 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 ]
 
 grails.plugin.springsecurity.rest.token.storage.jwt.secret='teraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretlove'
+
+

@@ -76,9 +76,20 @@ grails:
         enabled: true
 ---
 grails:
-    mongodb:
-        host: localhost
-        port: 27017
-        #username: ""
-        #password: ""
-        #databaseName: "mydatabase"
+    ### other grails config settings ###
+    plugin:
+        springsecurity:
+            oauth2:
+                active: true
+                registration:
+                    roleNames: ['ROLE_USER']
+                providers:
+                    okta:
+                        api_key: '0oa5nng1abVdrDXPv5d6'
+                        api_secret: 'zPW7XbWsH-4-Q0GkIGPJxOghLpRhxF8OXr86H7lI'
+                        userInfoUrl: 'https://dev-1275848.okta.com/oauth2/default/v1/userinfo'
+                        authorizeUrl: 'https://dev-1275848.okta.com/oauth2/default/v1/authorize'
+                        tokenUrl: 'https://dev-1275848.okta.com/oauth2/default/v1/token'
+                        scopes: 'email profile openid'
+---
+grails.serverURL: http://localhost:8080
