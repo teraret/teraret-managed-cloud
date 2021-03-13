@@ -1,0 +1,23 @@
+import usermanagement.User
+
+import usermanagement.RoleStatus
+
+model {
+	User user
+
+	List<RoleStatus> roleStatusList
+}
+
+json {
+id user.id
+mobile user.mobile
+email user.username
+enabled user.enabled
+mobileVerified user.mobileVerified
+accountExpired user.accountExpired
+accountLocked user.accountLocked
+passwordExpired user.passwordExpired
+
+roleStatus tmpl.rolestatus(roleStatusList ?: [])
+
+}

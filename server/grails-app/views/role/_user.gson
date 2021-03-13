@@ -1,0 +1,19 @@
+import usermanagement.User
+
+model {
+	User user
+}
+
+json {
+
+id user.id
+mobile user.mobile
+email user.username
+enabled user.enabled
+mobileVerified user.mobileVerified
+accountExpired user.accountExpired
+accountLocked user.accountLocked
+passwordExpired user.passwordExpired
+
+
+}

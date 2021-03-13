@@ -1,0 +1,11 @@
+import usermanagement.RoleStatus
+
+model {
+	RoleStatus rolestatus
+}
+
+json {
+id rolestatus.id
+authority rolestatus.authority
+checked rolestatus.checked
+}

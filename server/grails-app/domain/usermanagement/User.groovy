@@ -11,18 +11,15 @@ class User implements Serializable {
 
     private static final long serialVersionUID = 1
 
-    String firstName
-    String lastName
-    String email
+
     String mobile
     String username
     String password
     boolean enabled = true
+    boolean mobileVerified
     boolean accountExpired
     boolean accountLocked
     boolean passwordExpired
-
-
 
 
     Set<Role> getAuthorities() {
@@ -31,9 +28,8 @@ class User implements Serializable {
 
     static constraints = {
         mobile nullable: false, blank: false, unique: true
-        email nullable: false, blank: false, unique: true,email:true
         password nullable: false, blank: false, password: true
-        username nullable: false, blank: false, unique: true
+        username nullable: false, blank: false, unique: true,email:true
     }
 
     static mapping = {

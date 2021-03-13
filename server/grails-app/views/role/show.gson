@@ -1,0 +1,13 @@
+import usermanagement.Role
+
+model {
+	Role role
+	Iterable<User> userList
+}
+
+json {
+id role.id
+authority role.authority
+user tmpl.user(userList ?: [])
+
+}
