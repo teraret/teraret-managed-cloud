@@ -18,14 +18,6 @@ class UserRoleController {
     static responseFormats = ['json', 'xml']
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond userRoleService.list(params), model:[userRoleCount: userRoleService.count()]
-    }
-
-    def show(Long id) {
-        respond userRoleService.get(id)
-    }
 
     @Transactional
     def save(UserRole userRole) {
@@ -47,37 +39,5 @@ class UserRoleController {
         }
 
         respond userRole, [status: CREATED, view:"show"]
-    }
-
-    @Transactional
-    def update(UserRole userRole) {
-        if (userRole == null) {
-            render status: NOT_FOUND
-            return
-        }
-        if (userRole.hasErrors()) {
-            transactionStatus.setRollbackOnly()
-            respond userRole.errors
-            return
-        }
-
-        try {
-            userRoleService.save(userRole)
-        } catch (ValidationException e) {
-            respond userRole.errors
-            return
-        }
-
-        respond userRole, [status: OK, view:"show"]
-    }
-
-    @Transactional
-    def delete(Long id) {
-        if (id == null || userRoleService.delete(id) == null) {
-            render status: NOT_FOUND
-            return
-        }
-
-        render status: NO_CONTENT
     }
 }

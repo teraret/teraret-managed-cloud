@@ -2,7 +2,20 @@ import usermanagement.Role
 
 model {
 	Iterable<Role> roleList
+	Integer roleCount
+    Integer max
+    Integer offset
+    String sort
+    String order
 }
 
-json tmpl.role(roleList ?: [])
 
+json {
+    hal.paginate(Role, roleCount, offset, max, sort, order)
+    roles tmpl.role(roleList ?: [])
+    count roleCount
+    max max
+    offset offset
+    sort sort
+    order order
+}
