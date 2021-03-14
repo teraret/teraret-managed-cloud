@@ -24,7 +24,7 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'usermanagement.Us
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'usermanagement.UserRole'
 grails.plugin.springsecurity.authority.className = 'usermanagement.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	[pattern: '/**',             access: ['permitAll']],
+	[pattern: '/**',             access: ['ROLE_ADMIN']],
 	[pattern: '/error',          access: ['permitAll']],
 	[pattern: '/index',          access: ['permitAll']],
 	[pattern: '/index.gsp',      access: ['permitAll']],
@@ -48,6 +48,8 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 grails.plugin.springsecurity.rest.token.storage.jwt.secret='teraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretlove'
 
 
-
 grails.plugin.springsecurity.roleHierarchyEntryClassName = 'usermanagement.RoleHierarchyEntry'
 
+grails.plugin.springsecurity.shiro.permissionDomainClassName = 'usermanagement.Permission'
+
+grails.plugin.springsecurity.shiro.rolePermissionDomainClassName = 'usermanagement.RolePermission'

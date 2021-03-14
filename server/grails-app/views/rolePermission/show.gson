@@ -1,0 +1,7 @@
+import usermanagement.RolePermission
+
+model {
+	RolePermission rolePermission
+}
+
+json tmpl.rolePermission(rolePermission)

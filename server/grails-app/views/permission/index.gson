@@ -1,0 +1,8 @@
+import usermanagement.Permission
+
+model {
+	Iterable<Permission> permissionList
+}
+
+json tmpl.permission(permissionList ?: [])
+
