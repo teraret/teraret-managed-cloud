@@ -1,6 +1,8 @@
-package usermanagement
+package company
 
 import grails.validation.ValidationException
+import usermanagement.Role
+
 import static org.springframework.http.HttpStatus.CREATED
 import static org.springframework.http.HttpStatus.NOT_FOUND
 import static org.springframework.http.HttpStatus.NO_CONTENT
@@ -11,69 +13,70 @@ import grails.gorm.transactions.ReadOnly
 import grails.gorm.transactions.Transactional
 
 @ReadOnly
-class UserRoleController {
+class CompanyController {
 
-    UserRoleService userRoleService
+    CompanyService companyService
 
     static responseFormats = ['json', 'xml']
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond userRoleService.list(params), model:[userRoleCount: userRoleService.count()]
+        respond companyService.list(params), model:[companyCount: companyService.count()]
     }
 
     def show(Long id) {
-        respond userRoleService.get(id)
+        respond companyService.get(id)
     }
 
     @Transactional
-    def save(UserRole userRole) {
-        if (userRole == null) {
+    def save(Company company) {
+
+        if (company == null) {
             render status: NOT_FOUND
             return
         }
-        if (userRole.hasErrors()) {
+        if (company.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond userRole.errors
+            respond company.errors
             return
         }
 
         try {
-            userRoleService.save(userRole)
+            companyService.save(company)
         } catch (ValidationException e) {
-            respond userRole.errors
+            respond company.errors
             return
         }
 
-        respond userRole, [status: CREATED, view:"show"]
+        respond company, [status: CREATED, view:"show"]
     }
 
     @Transactional
-    def update(UserRole userRole) {
-        if (userRole == null) {
+    def update(Company company) {
+        if (company == null) {
             render status: NOT_FOUND
             return
         }
-        if (userRole.hasErrors()) {
+        if (company.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond userRole.errors
+            respond company.errors
             return
         }
 
         try {
-            userRoleService.save(userRole)
+            companyService.save(company)
         } catch (ValidationException e) {
-            respond userRole.errors
+            respond company.errors
             return
         }
 
-        respond userRole, [status: OK, view:"show"]
+        respond company, [status: OK, view:"show"]
     }
 
     @Transactional
     def delete(Long id) {
-        if (id == null || userRoleService.delete(id) == null) {
+        if (id == null || companyService.delete(id) == null) {
             render status: NOT_FOUND
             return
         }

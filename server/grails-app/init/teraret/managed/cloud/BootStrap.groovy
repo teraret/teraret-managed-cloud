@@ -9,8 +9,8 @@ class BootStrap {
         new Role(authority: "ROLE_ADMIN").save()
         new Role(authority: "ROLE_CRM_LEAD").save()
         new Role(authority: "ROLE_CRM").save()
+        new Role(authority: "ROLE_CUSTOMER").save()
         new Role(authority: "ROLE_CLIENT").save()
-
         new DealStatus(name:'Prospect').save
         new DealStatus(name:'Leads').save()
         new DealStatus(name:'Pitched').save()
