@@ -3,7 +3,6 @@ package usermanagement
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 import grails.compiler.GrailsCompileStatic
-import org.bson.types.ObjectId
 
 @GrailsCompileStatic
 @EqualsAndHashCode(includes='entry')
@@ -11,7 +10,7 @@ import org.bson.types.ObjectId
 class RoleHierarchyEntry implements Serializable {
 
 	private static final long serialVersionUID = 1
-	ObjectId id
+
 
 	String entry
 
