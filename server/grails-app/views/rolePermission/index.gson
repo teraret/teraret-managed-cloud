@@ -1,8 +1,0 @@
-import usermanagement.RolePermission
-
-model {
-	Iterable<RolePermission> rolePermissionList
-}
-
-json tmpl.rolePermission(rolePermissionList ?: [])
-

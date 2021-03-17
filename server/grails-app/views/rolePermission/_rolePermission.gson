@@ -1,7 +1,0 @@
-import usermanagement.RolePermission
-
-model {
-	RolePermission rolePermission
-}
-
-json g.render(rolePermission, [resolveTemplate: false])

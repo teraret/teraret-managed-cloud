@@ -46,9 +46,3 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 ]
 
 grails.plugin.springsecurity.rest.token.storage.jwt.secret='teraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretlove'
-
-grails.plugin.springsecurity.roleHierarchyEntryClassName = 'usermanagement.RoleHierarchyEntry'
-
-grails.plugin.springsecurity.shiro.permissionDomainClassName = 'usermanagement.Permission'
-
-grails.plugin.springsecurity.shiro.rolePermissionDomainClassName = 'usermanagement.RolePermission'

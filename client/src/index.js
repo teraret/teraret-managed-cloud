@@ -10,8 +10,6 @@ import Insights from './pages/Insights';
 import Solution from './pages/Solution';
 import Industries from './pages/Industries';
 import './index.css';
-import Spreadsheet from "react-spreadsheet";
-
 import green from '@material-ui/core/colors/green';
 
 const theme = createMuiTheme({
@@ -53,7 +51,7 @@ class App extends Component {
                     }
                 },
                 legend: {
-                    data: ['展现','点击','访问','咨询','订单']
+                    data: ['Hello','点击','访问','咨询','订单']
                 },
             
                 series: [
@@ -93,7 +91,7 @@ class App extends Component {
                             }
                         },
                         data: [
-                            {value: 60, name: '访问'},
+                            {value: 60, name: 'Hello'},
                             {value: 40, name: '咨询'},
                             {value: 20, name: '订单'},
                             {value: 80, name: '点击'},
@@ -106,7 +104,6 @@ class App extends Component {
         }
         
         />
-        <Spreadsheet data={data} />
 
 </>);}}
 
