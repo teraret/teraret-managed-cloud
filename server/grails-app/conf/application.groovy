@@ -46,3 +46,4 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 ]
 
 grails.plugin.springsecurity.rest.token.storage.jwt.secret='teraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretlove'
+

@@ -1,12 +1,10 @@
 package company
 
 import org.bson.types.ObjectId
-import usermanagement.User
 import usermanagement.UserRole
 
 class Company {
     ObjectId id
-
     String avatar
     String name
     String description
@@ -19,8 +17,8 @@ class Company {
     Date dateCreated
     Date lastUpdated
 
-
     static constraints = {
+
         avatar nullable:true, blank:true
         name unique:true
         description nullable: true, blank: true

@@ -11,10 +11,11 @@ class User implements Serializable {
 
     private static final long serialVersionUID = 1
 
-
     String mobile
+    String email
     String username
     String password
+
     boolean enabled = true
     boolean mobileVerified
     boolean accountExpired

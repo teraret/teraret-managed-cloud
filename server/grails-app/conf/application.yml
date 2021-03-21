@@ -48,20 +48,20 @@ grails:
         types:
             json:
               - application/json
-              - text/json   
+              - text/json
             hal:
               - application/hal+json
-              - application/hal+xml  
+              - application/hal+xml
             xml:
               - text/xml
-              - application/xml                                 
+              - application/xml
             atom: application/atom+xml
             css: text/css
             csv: text/csv
             js: text/javascript
             rss: application/rss+xml
             text: text/plain
-            all: '*/*'            
+            all: '*/*'
     urlmapping:
         cache:
             maxsize: 1000
@@ -76,20 +76,20 @@ grails:
         enabled: true
 ---
 grails:
-    ### other grails config settings ###
-    plugin:
-        springsecurity:
-            oauth2:
-                active: true
-                registration:
-                    roleNames: ['ROLE_USER']
-                providers:
-                    okta:
-                        api_key: '0oa5nng1abVdrDXPv5d6'
-                        api_secret: 'zPW7XbWsH-4-Q0GkIGPJxOghLpRhxF8OXr86H7lI'
-                        userInfoUrl: 'https://dev-1275848.okta.com/oauth2/default/v1/userinfo'
-                        authorizeUrl: 'https://dev-1275848.okta.com/oauth2/default/v1/authorize'
-                        tokenUrl: 'https://dev-1275848.okta.com/oauth2/default/v1/token'
-                        scopes: 'email profile openid'
----
-grails.serverURL: http://localhost:8080
+  plugin:
+    springsecurity:
+      oauth2:
+        providers:
+          google:
+            api_key: 'google-api-key'               #needed
+            api_secret: 'google-api-secret'         #needed
+            successUri: "/oauth2/google/success"    #optional
+            failureUri: "/oauth2/google/failure"    #optional
+            callback: "/oauth2/google/callback"     #optional
+            scopes: "email profile openid"          #optional, see https://developers.google.com/identity/protocols/googlescopes#monitoringv3
+          facebook:
+            api_key: '885913971925314'               #needed
+            api_secret: 'a6fc7a680f48cd626f8d70e7e875c91f' #needed
+            successUri: "/oauth2/facebook/success"    #optional
+            failureUri: "/oauth2/facebook/failure"    #optional
+            callback: "/oauth2/facebook/callback"     #optional
