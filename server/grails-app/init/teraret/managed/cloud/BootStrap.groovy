@@ -17,7 +17,6 @@ class BootStrap {
         new DealStatus(name:'Qualified').save()
         new DealStatus(name:'Proposal Sent').save()
         new DealStatus(name:'Negotiation').save()
-        new DealStatus(name:'Partial payment done').save()
         new DealStatus(name:'Deal Won').save()
         new DealStatus(name:'Deal Lost').save()
         new DealStatus(name:'Partial payment done').save()
