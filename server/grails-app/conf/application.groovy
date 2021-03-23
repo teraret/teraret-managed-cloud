@@ -1,6 +1,6 @@
 grails {
 	mongodb {
-		url = ""
+		url = '${MONGODB_URL}'
 	}
 }
 
