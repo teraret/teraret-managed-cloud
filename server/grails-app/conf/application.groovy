@@ -1,9 +1,9 @@
 grails {
 	mongodb {
-		url = '${MONGODB_URL}'
+		url = ''
 	}
 }
-
+//BXWEBTOQW130GLl8
 grails.plugin.springsecurity.filterChain.chainMap = [
         //Stateless chain
         [
@@ -25,6 +25,8 @@ grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'usermanagement
 grails.plugin.springsecurity.authority.className = 'usermanagement.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/**',             access: ['permitAll']],
+	[pattern: '/user',       access: ['ROLE_ADMIN']],
+	[pattern: '/user/**',    access: ['ROLE_ADMIN']],
 	[pattern: '/error',          access: ['permitAll']],
 	[pattern: '/index',          access: ['permitAll']],
 	[pattern: '/index.gsp',      access: ['permitAll']],

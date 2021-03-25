@@ -1,6 +1,8 @@
 package usermanagement
 
 import grails.validation.ValidationException
+import org.bson.types.ObjectId
+
 import static org.springframework.http.HttpStatus.CREATED
 import static org.springframework.http.HttpStatus.NOT_FOUND
 import static org.springframework.http.HttpStatus.NO_CONTENT
@@ -29,17 +31,17 @@ class UserController {
         ]
     }
 
-    def show(Long id) {
-        def user = userService.get(id)
+    def show(String id) {
+        def user = userService.get(new ObjectId(id))
         def roleList = Role.list()
-        def userroleList = UserRole.findAllByUser(user).role
-        List<RoleStatus> roleStatusList = []
+//        def userroleList = UserRole.findAllByUser(user).role
+//        List<RoleStatus> roleStatusList = []
+//
+//        roleList.each { r ->
+//            roleStatusList.add(new RoleStatus(id: r.id,authority: r.authority, checked: userroleList.contains(r)))
+//        }
 
-        roleList.each { r ->
-            roleStatusList.add(new RoleStatus(id: r.id,authority: r.authority, checked: userroleList.contains(r)))
-        }
-
-        [user:user,roleStatusList:roleStatusList]
+        [user:user]
     }
 
     @Transactional

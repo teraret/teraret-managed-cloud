@@ -2,20 +2,7 @@ import usermanagement.User
 
 model {
 	Iterable<User> userList
-	Integer userCount
-    Integer max
-    Integer offset
-    String sort
-    String order
 }
 
+json tmpl.user(userList ?: [])
 
-json {
-    hal.paginate(User, userCount, offset, max, sort, order)
-    users tmpl.user(userList ?: [])
-    count userCount
-    max max
-    offset offset
-    sort sort
-    order order
-}

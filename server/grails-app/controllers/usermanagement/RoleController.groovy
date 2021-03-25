@@ -1,6 +1,8 @@
 package usermanagement
 
 import grails.validation.ValidationException
+import org.bson.types.ObjectId
+
 import static org.springframework.http.HttpStatus.CREATED
 import static org.springframework.http.HttpStatus.NOT_FOUND
 import static org.springframework.http.HttpStatus.NO_CONTENT
@@ -32,10 +34,9 @@ class RoleController {
                  order: params.order]
     }
 
-    def show(Long id) {
-        def role =roleService.get(id)
-        def userList = UserRole.findAllByRole(role).user
-        [role:role,userList:userList]
+    def show(String id) {
+        def role =roleService.get(new ObjectId(id))
+        [role:role]
     }
 
     @Transactional

@@ -1,15 +1,21 @@
 package usermanagement
 
+import grails.rest.Resource
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 import grails.compiler.GrailsCompileStatic
+import org.bson.types.ObjectId
+
 
 @GrailsCompileStatic
+@Resource(uri='/api/user')
 @EqualsAndHashCode(includes='username')
 @ToString(includes='username', includeNames=true, includePackage=false)
 class User implements Serializable {
 
     private static final long serialVersionUID = 1
+
+    ObjectId id
 
     String mobile
     String email
@@ -22,10 +28,14 @@ class User implements Serializable {
     boolean accountLocked
     boolean passwordExpired
 
+    Set<Role> authorities
+    static embedded = ['authorities']
 
-    Set<Role> getAuthorities() {
-        (UserRole.findAllByUser(this) as List<UserRole>)*.role as Set<Role>
-    }
+
+
+//    Set<Role> getAuthorities() {
+//        (UserRole.findAllByUser(this) as List<UserRole>)*.role as Set<Role>
+//    }
 
     static constraints = {
         mobile nullable: false, blank: false, unique: true

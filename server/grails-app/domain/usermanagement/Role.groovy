@@ -1,19 +1,21 @@
 package usermanagement
 
+import grails.rest.Resource
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 import grails.compiler.GrailsCompileStatic
+import org.bson.types.ObjectId
 
 
 @GrailsCompileStatic
+@Resource(uri='/api/role')
 @EqualsAndHashCode(includes='authority')
 @ToString(includes='authority', includeNames=true, includePackage=false)
 class Role implements Serializable {
 
 	private static final long serialVersionUID = 1
 
-
-
+	ObjectId id
 	String authority
 
 	static constraints = {
