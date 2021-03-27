@@ -72,8 +72,12 @@ grails:
 
 ---
 grails:
-    cors:
+     cors:
         enabled: true
+---
+grails:
+   resources:
+       pattern: '/**'
 ---
 grails:
   plugin:

@@ -21,6 +21,7 @@ import Solution from './pages/Solution';
 import Industries from './pages/Industries';
 import './index.css';
 import green from '@material-ui/core/colors/green';
+import StoreFront from './layout/StoreFront';
 
 const theme = createMuiTheme({
   palette: {
@@ -43,53 +44,17 @@ function Index(props) {
     BrowserRouter forceRefresh = {
       true
     } >
+    
+    <Switch >
+    <Route exact path = "/" >
+    <StoreFront>
+    <Solution / >
+    </StoreFront>
     <
-    Layout >
-    <
-    Switch >
-    <
-    Route exact path = "/" >
-    <
-    Solution / >
-    <
-    /Route> <
-    Route exact path = "/login" >
-    <
-    Login / >
-    <
-    /Route> <
-    Route exact path = "/register" >
-    <
-    Solution / >
-    <
-    /Route> <
-    Route exact path = "/solutions" >
-    <
-    Solution / >
-    <
-    /Route> <
-    Route exact path = "/insights" >
-    <
-    Insights / >
-    <
-    /Route> <
-    Route exact path = "/platforms" >
-    <
-    Platforms / >
-    <
-    /Route> <
-    Route exact path = "/industries" >
-    <
-    Industries / >
-    <
-    /Route> <
-    Route exact path = "/about" >
-    <
-    About / >
-    <
-    /Route> < /
-    Switch > <
-    /Layout> < /
+    /Route> 
+    < /Switch > 
+   
+    < /
     BrowserRouter >
   )
 }

@@ -25,8 +25,10 @@ grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'usermanagement
 grails.plugin.springsecurity.authority.className = 'usermanagement.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/**',             access: ['permitAll']],
-	[pattern: '/user',       access: ['ROLE_ADMIN']],
-	[pattern: '/user/**',    access: ['ROLE_ADMIN']],
+	[pattern: '/user',           access: ['ROLE_ADMIN']],
+	[pattern: '/user/**',        access: ['ROLE_ADMIN']],
+	[pattern: '/api/user',       access: ['ROLE_ADMIN']],
+	[pattern: '/api/user/**',    access: ['ROLE_ADMIN']],
 	[pattern: '/error',          access: ['permitAll']],
 	[pattern: '/index',          access: ['permitAll']],
 	[pattern: '/index.gsp',      access: ['permitAll']],
