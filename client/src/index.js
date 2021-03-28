@@ -21,7 +21,8 @@ import Solution from './pages/Solution';
 import Industries from './pages/Industries';
 import './index.css';
 import green from '@material-ui/core/colors/green';
-import StoreFront from './layout/StoreFront';
+import StoreFront from './layout/StoreFront/StoreFront';
+import Home from './pages/home/Home';
 
 const theme = createMuiTheme({
   palette: {
@@ -48,7 +49,7 @@ function Index(props) {
     <Switch >
     <Route exact path = "/" >
     <StoreFront>
-    <Solution / >
+    <Home / >
     </StoreFront>
     <
     /Route> 
