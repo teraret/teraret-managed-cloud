@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap';
+import DomainSearch from '../../component/domain/DomainSearch';
 
 import homebackground from './../../images/server-background.jpg'
 
@@ -17,6 +18,7 @@ export default function Home() {
           </Col>
          </Row>
         </Container>
+        <DomainSearch/>
         {/* <div className="container-fluid px-0">
           <div className="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-center">
             <div className="col-md-8 text-center d-flex align-items-center ftco-animate js-fullheight">
