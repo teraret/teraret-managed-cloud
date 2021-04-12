@@ -16,4 +16,4 @@ phases:
       - mv server/build/libs  ./
 artifacts:
   files:
-     -deploy/**/*
+     -libs/**/*
