@@ -13,7 +13,7 @@ phases:
   post_build:
     commands:
       - echo "Entered Post Build Phase"
-      - mv build/libs ./
+      - mv server/build/libs  ./
 artifacts:
   files:
      -deploy/**/*
