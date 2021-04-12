@@ -16,4 +16,4 @@ phases:
       - mv server/build/libs  ./
 artifacts:
   files:
-     - libs/server-0.1.war
+     - libs/**/*
