@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo "Entered Pre Build Phase"
+  build:
+    commands:
+      - echo "Entered Build Phase"
+  post_build:
+    commands:
+      - echo "Entered Post Build Phase"
+artifacts:
+  files:
+     -deploy/**/*
