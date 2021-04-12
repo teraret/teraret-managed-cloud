@@ -78,22 +78,7 @@ grails:
 grails:
    resources:
        pattern: '/**'
----
-grails:
-  plugin:
-    springsecurity:
-      oauth2:
-        providers:
-          google:
-            api_key: 'google-api-key'               #needed
-            api_secret: 'google-api-secret'         #needed
-            successUri: "/oauth2/google/success"    #optional
-            failureUri: "/oauth2/google/failure"    #optional
-            callback: "/oauth2/google/callback"     #optional
-            scopes: "email profile openid"          #optional, see https://developers.google.com/identity/protocols/googlescopes#monitoringv3
-          facebook:
-            api_key: '885913971925314'               #needed
-            api_secret: 'a6fc7a680f48cd626f8d70e7e875c91f' #needed
-            successUri: "/oauth2/facebook/success"    #optional
-            failureUri: "/oauth2/facebook/failure"    #optional
-            callback: "/oauth2/facebook/callback"     #optional
+endpoints:
+    enabled: true
+    jmx:
+      enabled: true
