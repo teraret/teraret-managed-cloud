@@ -13,8 +13,7 @@ phases:
   post_build:
     commands:
       - echo "Entered Post Build Phase"
-      - mv server/build/libs  ./
+      - mv server/build/libs  ./target
 artifacts:
   files:
-     - libs/**/*
-  discard-paths: yes
+     - target/**/*
