@@ -8,13 +8,11 @@ phases:
     commands:
       - echo "Entered Build Phase"
       - echo "Copy Client Complete"
-      - gradle assemble
+      - ./gradlew assemble
       - echo "Assemble complete"
   post_build:
     commands:
       - echo "Entered Post Build Phase"
-      - mv server/build/libs  ./target
 artifacts:
   files:
-     - target/server-0.1.war
-  discard-paths: yes
+     - build/libs/*.war
