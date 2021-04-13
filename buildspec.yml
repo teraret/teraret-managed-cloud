@@ -13,9 +13,12 @@ phases:
       - echo "Copy Client Complete"
       - gradle assemble
       - echo "Assemble complete"
+      - unzip server/build/libs/*.war
+
   post_build:
     commands:
       - echo "Entered Post Build Phase"
+      - rm server/build/libs/*.war
 artifacts:
   files:
-     - server/build/libs/*.jar
+     - server/build/libs/**/*
