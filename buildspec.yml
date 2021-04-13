@@ -21,4 +21,4 @@ phases:
       - rm server/build/libs/*.war
 artifacts:
   files:
-     - server/build/libs/**/*
+     - server/build/libs/**
