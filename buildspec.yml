@@ -15,4 +15,4 @@ phases:
       - echo "Entered Post Build Phase"
 artifacts:
   files:
-     - build/libs/*.war
+     - server/build/libs/*.war
