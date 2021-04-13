@@ -1,7 +1,6 @@
 grails {
 	mongodb {
-		url = 'mongodb+srv://harish:BXWEBTOQW130GLl8@cluster0.g7qi8.mongodb.net/teraret?retryWrites=true&w=majority'
-		//url='${MONGO_URL}'
+		url='${MONGO_URL}'
 	}
 }
 //BXWEBTOQW130GLl8

@@ -10,7 +10,7 @@ buildscript {
     }
 }
 
-version "0.12"
+version "0.1"
 group "teraret.managed.cloud"
 
 apply plugin:"eclipse"
