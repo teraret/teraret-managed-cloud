@@ -8,7 +8,7 @@ phases:
     commands:
       - echo "Entered Build Phase"
       - echo "Copy Client Complete"
-      - ./gradlew assemble
+      - gradle assemble
       - echo "Assemble complete"
   post_build:
     commands:
