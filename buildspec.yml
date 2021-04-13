@@ -16,4 +16,5 @@ phases:
       - mv server/build/libs  ./target
 artifacts:
   files:
-     - target/**/*
+     - target/server-0.1.war
+  discard-paths: yes
