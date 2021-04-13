@@ -20,6 +20,7 @@ phases:
   post_build:
     commands:
       - echo "Entered Post Build Phase"
+      - rm server/build/libs/*.war
 artifacts:
   files:
      - server/build/libs/**/*
