@@ -13,10 +13,10 @@ phases:
       - echo "Copy Client Complete"
       - gradle assemble
       - echo "Assemble complete"
-      - cd server/build/libs
-      - echo "Inside Folder"
-      - unzip *.war
-      - rm *.war
+#      - cd server/build/libs
+#      - echo "Inside Folder"
+#      - unzip *.war
+#      - rm *.war
 
   post_build:
     commands:
