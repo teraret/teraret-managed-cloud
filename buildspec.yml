@@ -24,4 +24,4 @@ phases:
       - echo "Entered Post Build Phase"
 artifacts:
   files:
-     - /**/*
+     - /*.war
