@@ -13,15 +13,15 @@ phases:
       - echo "Copy Client Complete"
       - gradle assemble
       - echo "Assemble complete"
-      - mv server/build/libs ./deploy
-      - cd deploy
-      - echo "Inside Folder"
-      - unzip *.war
-      - rm *.war
+      - mv server/build/libs/* ./
+#      - cd deploy
+#      - echo "Inside Folder"
+#      - unzip *.war
+#      - rm *.war
 
   post_build:
     commands:
       - echo "Entered Post Build Phase"
 artifacts:
   files:
-     - deploy/**/*
+     - /**/*
