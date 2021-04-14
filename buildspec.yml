@@ -4,12 +4,15 @@ phases:
   install:
     runtime-versions:
       java: corretto11
+      nodejs: 14.15.4
   pre_build:
     commands:
       - echo "Entered Pre Build Phase"
   build:
     commands:
       - echo "Entered Build Phase"
+      - gradle buildi
+      - gradle buildc
       - echo "Copy Client Complete"
       - gradle copyClientResources
       - echo "Copy Client Complete"

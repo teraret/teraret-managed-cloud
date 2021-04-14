@@ -21,8 +21,13 @@ task start(type: NpmTask) {
     args = ['run', 'start']
 }
 
+task buildi(type: NpmTask) {
+    group = 'build'
+    description = 'Build the client bundle'
+    args = ['install']
+}
 
-task build(type: NpmTask) {
+task buildc(type: NpmTask) {
     group = 'build'
     description = 'Build the client bundle'
     args = ['run', 'build']
