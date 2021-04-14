@@ -34,9 +34,9 @@ export default function TopNav(props) {
             <NavItem>
               <NavLink href="/hosting">Hosting</NavLink>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <NavLink href="/hosting">Cloud Deployment</NavLink>
-            </NavItem>
+            </NavItem> */}
             <NavItem>
               <NavLink href="/blog">Blog</NavLink>
             </NavItem>

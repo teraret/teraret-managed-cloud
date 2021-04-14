@@ -11,13 +11,11 @@ phases:
     commands:
       - echo "Entered Build Phase"
       - echo "Copy Client Complete"
+      - gradle copyClientResources
+      - echo "Copy Client Complete"
       - gradle assemble
       - echo "Assemble complete"
       - mv server/build/libs/*.war ./ROOT.war
-#      - cd deploy
-#      - echo "Inside Folder"
-#      - unzip *.war
-#      - rm *.war
 
   post_build:
     commands:
